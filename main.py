@@ -1,7 +1,7 @@
 from random import randint
 
 
-def attack(char_name, char_class):
+def attack(char_name: str, char_class: str) -> str:
     if char_class == 'warrior':
         damage = randint(8, 10)
     elif char_class == 'mage':
@@ -12,7 +12,7 @@ def attack(char_name, char_class):
     return (f'{char_name} нанёс урон противнику равный {damage}')
 
 
-def defence(char_name, char_class):
+def defence(char_name: str, char_class: str):
     if char_class == 'warrior':
         damage = randint(15, 20)
     elif char_class == 'mage':
@@ -22,7 +22,7 @@ def defence(char_name, char_class):
     return (f'{char_name} блокировал {damage} урона')
 
 
-def special(char_name, char_class):
+def special(char_name: str, char_class: str):
     if char_class == 'warrior':
         skill = ' применил специальное умение «Выносливость 105»'
     if char_class == 'mage':
@@ -32,7 +32,7 @@ def special(char_name, char_class):
     return char_name + skill
 
 
-def start_training(char_name, char_class):
+def start_training(char_name: str, char_class: str):
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -44,7 +44,7 @@ def start_training(char_name, char_class):
           ' — чтобы блокировать атаку противника или special — чтобы'
           ' использовать свою суперсилу.')
     print('Если не хочешь тренироваться, введи команду skip.')
-    cmd = None
+    cmd: str = None
     while cmd != 'skip':
         cmd = input('Введи команду: ')
         if cmd == 'attack':
@@ -57,7 +57,7 @@ def start_training(char_name, char_class):
 
 
 def choice_char_class():
-    approve_choice = None
+    approve_choice: str = None
     char_class = None
     while approve_choice != 'y':
         char_class = input('Введи название персонажа, за которого хочешь'
